@@ -7,13 +7,13 @@ public class Trainer {
         this.name = name;
     }
 
-    public void searchForPokemon(Area area, String searchType, String value, ArrayList<Pokemon> list) {
+    public void searchForPokemon(Area area, String searchType, String value) {
         Pokemon foundPokemon = null;
 
         if (searchType.equalsIgnoreCase("name")) {
-            foundPokemon = area.searchPokemonByName(value, list);
+            foundPokemon = area.searchPokemonByName(value);
         } else if (searchType.equalsIgnoreCase("type")) {
-            foundPokemon = area.searchPokemonByType(value, list);
+            foundPokemon = area.searchPokemonByType(value);
         }
 
         if (foundPokemon != null) {

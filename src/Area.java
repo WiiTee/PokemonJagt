@@ -7,18 +7,18 @@ public class Area {
         return pokemonList;
     }
 
-    public void addPokemon(Pokemon pokemon, ArrayList<Pokemon> list) {
-        list.add(pokemon);
+    public void addPokemon(Pokemon pokemon) {
+        pokemonList.add(pokemon);
     }
 
-    public void showAllPokemon(ArrayList<Pokemon> list) {
-        for (Pokemon p : list) {
+    public void showAllPokemon() {
+        for (Pokemon p : pokemonList) {
             System.out.println(p);
         }
     }
 
-    public Pokemon searchPokemonByName(String name, ArrayList<Pokemon> list) {
-        for (Pokemon p : list) {
+    public Pokemon searchPokemonByName(String name) {
+        for (Pokemon p : pokemonList) {
             if (p.getName().equalsIgnoreCase(name)) {
                 return p;
             }
@@ -26,8 +26,8 @@ public class Area {
         return null;
     }
 
-    public Pokemon searchPokemonByType(String type, ArrayList<Pokemon> list) {
-        for (Pokemon p : list) {
+    public Pokemon searchPokemonByType(String type) {
+        for (Pokemon p : pokemonList) {
             if (p.getType().equalsIgnoreCase(type)) {
                 return p;
             }
