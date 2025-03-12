@@ -1,34 +1,30 @@
 import java.util.ArrayList;
 
-public class Forest {
-    private ArrayList<Pokemon> pokemonList = new ArrayList<>();
+public class Forest extends Area {
+    private ArrayList<Pokemon> forestList = new ArrayList<>();
 
-    public void addPokemon(Pokemon pokemon) {
-        pokemonList.add(pokemon);
+    public ArrayList<Pokemon> getForestList() {
+        return forestList;
     }
 
-    public void showAllPokemon() {
+    @Override
+    public void addPokemon(Pokemon pokemon, ArrayList<Pokemon> list) {
+        super.addPokemon(pokemon, list);
+    }
+
+    @Override
+    public void showAllPokemon(ArrayList<Pokemon> list) {
         System.out.println("\nPokémon i skoven:");
-        for (Pokemon p : pokemonList) {
-            System.out.println(p);
-        }
+        super.showAllPokemon(list);
     }
 
-    public Pokemon searchPokemonByName(String name) {
-        for (Pokemon p : pokemonList) {
-            if (p.getName().equalsIgnoreCase(name)) {
-                return p;
-            }
-        }
-        return null;
+    @Override
+    public Pokemon searchPokemonByName(String name, ArrayList<Pokemon> list) {
+        return super.searchPokemonByName(name, list);
     }
 
-    public Pokemon searchPokemonByType(String type) {
-        for (Pokemon p : pokemonList) {
-            if (p.getType().equalsIgnoreCase(type)) {
-                return p;
-            }
-        }
-        return null;
+    @Override
+    public Pokemon searchPokemonByType(String type, ArrayList<Pokemon> list) {
+        return super.searchPokemonByType(type, list);
     }
 }
